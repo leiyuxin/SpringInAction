@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean id="knight" class="org.leiyuxin.exercise.studyspringdemo.chapter1.BraveKnight">
-	<constructor-arg ref="quest"></constructor-arg>
-</bean>
-<bean id="quest" class="org.leiyuxin.exercise.studyspringdemo.chapter1.SlayDragonQuest">
-<constructor-arg value="#{T(System).out}">
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="knight"
+		class="org.leiyuxin.exercise.studyspringdemo.chapter1.BraveKnight">
+		<constructor-arg ref="quest"></constructor-arg>
+	</bean>
+	<bean id="quest"
+		class="org.leiyuxin.exercise.studyspringdemo.chapter1.SlayDragonQuest">
+		<constructor-arg value="#{T(System).out}">
 
-</constructor-arg>
-</bean>
+		</constructor-arg>
+	</bean>
+
+	<bean id="minnstrel"
+		class="org.leiyuxin.exercise.studyspringdemo.chapter1.Minstrel">
+		<constructor-arg value="#{T(System).out}"></constructor-arg>
+	</bean>
+	<aop:config>
+		<aop:aspect ref="minnstrel">
+			<aop:pointcut id="embark"
+				expression="execution(* *.embarkOnQuest(..))" />
+			<aop:before method="singBeforeQuest" pointcut-ref="embark" />
+			<aop:after method="singAfterQuest" pointcut-ref="embark"/>
+		</aop:aspect>
+	</aop:config>
+
 </beans>
