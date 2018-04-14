@@ -9,14 +9,19 @@ import org.springframework.stereotype.Component;
 public class CDPlayer implements MediaPlayer {
 
 	private CompactDisc cd;
-
-	public CDPlayer(CompactDisc cd) { // TODO Auto-generated constructor stub
+	public CDPlayer(WhiteAlum cd,CDPlayerConfigBaseOnExplicit cds) { // 当生成CDPlayer 的时候他会在bean 容器中找到这个类型的Bean这个Bean应该具有唯一性，针对构造器注入，当生成bean的时候如果有无参构造最先调用，否则调用其他构造
+		this.cd = cd;
+		System.out.println("带有WHiteAlum 的构造函数被调用");
+	}
+/*	public CDPlayer(SgtPeppers cd,String s) { // 当生成CDPlayer 的时候他会在bean 容器中找到这个类型的Bean这个Bean应该具有唯一性，针对构造器注入，当生成bean的时候如果有无参构造最先调用，否则调用其他构造,且构造函数是唯一的
 		this.cd = cd;
 	}
+*/
 
-	public CDPlayer() {
+	/*public CDPlayer() {
 		// TODO Auto-generated constructor stub
-	}
+		System.out.println("CDPlayer 无参数构造被调用");
+	}*/
 
 	@Override
 	public void work() {

@@ -1,5 +1,8 @@
 package org.leiyuxin.exercise.studyspringdemo.chapter2;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class WhiteAlum extends SgtPeppers {
 
 
