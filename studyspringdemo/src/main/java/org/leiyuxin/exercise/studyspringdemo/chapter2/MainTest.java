@@ -7,7 +7,7 @@ public class MainTest {
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext context  = new AnnotationConfigApplicationContext(CDPlayerConfig.class);
 		//CompactDisc cd = context.getBean(CompactDisc.class);
-		//CompactDisc cd = (CompactDisc) context.getBean("sgtPeppers");//Spring为bean 取得名字为实际类名首字母小写
+		//CompactDisc cd = (CompactDisc) context.getBean("sgtPeppers");//Spring为bean ID:实际类名首字母小写
 		CompactDisc cd = (CompactDisc) context.getBean("specialComponentName");
 		cd.play();
 		context.close();
