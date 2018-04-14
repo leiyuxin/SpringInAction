@@ -16,6 +16,7 @@ public class CDPlayerTest {
 
 	@Test
 	public void cdShouldNotBeNull() {
+		cd.play();
 		assertNotNull(cd);
 
 	}
