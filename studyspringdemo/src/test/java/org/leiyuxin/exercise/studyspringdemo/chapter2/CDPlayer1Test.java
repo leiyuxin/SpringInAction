@@ -28,7 +28,7 @@ public void cdShouldNotBeNull() {
 @Test
 public void play() {
 	player.work();
-	String s = runle.getLog();
+	String s = runle.getLog();//该规则能够基于控制台的输出编写断言,getLog 能够获取控制台的输出
 	System.out.println( s );
 }
 

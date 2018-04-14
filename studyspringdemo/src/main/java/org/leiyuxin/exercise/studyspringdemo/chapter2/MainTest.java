@@ -12,12 +12,15 @@ public class MainTest {
 		CompactDisc cd = (CompactDisc) context.getBean("specialComponentName");
 		cd.play();
 
-		context.getBean(MediaPlayer.class).work();
+		System.out.println(context.getBean("lyx"));
+		System.out.println(context.getBeanDefinitionCount());
 		context.close();
 
 		ClassPathXmlApplicationContext contextXml = new ClassPathXmlApplicationContext("autoConfig.xml");
-		cd = contextXml.getBean(CompactDisc.class);
+		cd = (CompactDisc) contextXml.getBean("randomBeatlesCD");
 		cd.play();
+
+		System.out.println(contextXml.getBean(CDPlayerConfigBaseOnExplicit.class));
 		context.close();
 	}
 }

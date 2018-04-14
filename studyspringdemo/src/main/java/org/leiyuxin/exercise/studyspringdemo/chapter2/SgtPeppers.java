@@ -13,7 +13,7 @@ public class SgtPeppers implements CompactDisc {
 
 	@Override
 	public void play() {
-		System.out.println("Test 成功");
+		System.out.println("SgtPeppers play 成功");
 	}
 
 }
