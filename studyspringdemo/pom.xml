@@ -47,12 +47,20 @@
 			<version>4.3.15.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
-		<!--加入inject 使用java 注入规范 Named替换掉Component注解  -->
+		<!--加入inject 使用java 注入规范 Named替换掉Component注解 -->
 		<dependency>
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
+		<!--加入测试使用的system rules库，  -->
+		<dependency>
+			<groupId>com.github.stefanbirkner</groupId>
+			<artifactId>system-rules</artifactId>
+			<version>1.17.1</version>
+			<scope>test</scope>
+		</dependency>
+
 		<!-- 加入数据源 -->
 		<dependency>
 			<groupId>mysql</groupId>
