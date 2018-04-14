@@ -5,13 +5,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CDPlayer implements MediaPlayer {
+	@Autowired
 	private CompactDisc cd;
 
-	@Autowired
-	public CDPlayer(CompactDisc cd) {
+
+/*	public CDPlayer(CompactDisc cd) {
 		// TODO Auto-generated constructor stub
 		this.cd = cd;
-	}
+	}*/
 	@Override
 	public void work() {
 		cd.play();
