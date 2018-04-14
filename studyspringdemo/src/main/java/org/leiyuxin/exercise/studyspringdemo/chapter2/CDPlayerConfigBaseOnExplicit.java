@@ -11,6 +11,13 @@ public class CDPlayerConfigBaseOnExplicit {
 		return new SgtPeppers();
 	}
 
+	/*@Bean void ss() {  Bean注解必须修饰有返回值的
+		System.out.println("无返回值的Bean修饰");
+	}*/
+	@Bean String sss() {
+		System.out.println("返回值String的Bean修饰");
+		return "sss";
+	}
 	@Bean(name = "lyx")
 	public CompactDisc sgtPeppers() {
 		return new SgtPeppers();
