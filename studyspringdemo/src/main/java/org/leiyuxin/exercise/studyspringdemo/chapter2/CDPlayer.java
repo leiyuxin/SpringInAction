@@ -21,4 +21,9 @@ public class CDPlayer implements MediaPlayer {
 	public void insertDisc(CompactDisc cd) {
 		this.cd = cd;
 	}
+
+	@Autowired
+	public void insertDisc() {
+		System.out.println("在检查到Autowired注解的时候调用此方法");
+	}
 }
