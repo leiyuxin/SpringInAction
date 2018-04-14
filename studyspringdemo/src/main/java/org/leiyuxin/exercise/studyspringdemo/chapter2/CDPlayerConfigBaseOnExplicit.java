@@ -14,6 +14,12 @@ public class CDPlayerConfigBaseOnExplicit {
 	/*@Bean void ss() {  Bean注解必须修饰有返回值的
 		System.out.println("无返回值的Bean修饰");
 	}*/
+	@Bean CDPlayer cdPlayer() {
+		return new CDPlayer(whiteAlum());
+	}
+	@Bean WhiteAlum whiteAlum() {
+		return new WhiteAlum();
+	}
 	@Bean String sss() {
 		System.out.println("返回值String的Bean修饰");
 		return "sss";

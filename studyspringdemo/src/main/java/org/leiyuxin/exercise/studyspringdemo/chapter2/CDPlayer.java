@@ -9,10 +9,11 @@ import org.springframework.stereotype.Component;
 public class CDPlayer implements MediaPlayer {
 
 	private CompactDisc cd;
-	public CDPlayer(WhiteAlum cd,String cds) { // 当生成CDPlayer 的时候他会在bean 容器中找到这个类型的Bean这个Bean应该具有唯一性，针对构造器注入，当生成bean的时候如果有无参构造最先调用，否则调用其他构造
+	@Autowired
+	public CDPlayer(WhiteAlum cd) { // 当生成CDPlayer 的时候他会在bean 容器中找到这个类型的Bean这个Bean应该具有唯一性，针对构造器注入，当生成bean的时候如果有无参构造最先调用，否则调用其他构造
 		this.cd = cd;
 		System.out.println("带有WHiteAlum 的构造函数被调用");
-		System.out.println(cds);
+
 	}
 /*	public CDPlayer(SgtPeppers cd,String s) { // 当生成CDPlayer 的时候他会在bean 容器中找到这个类型的Bean这个Bean应该具有唯一性，针对构造器注入，当生成bean的时候如果有无参构造最先调用，否则调用其他构造,且构造函数是唯一的
 		this.cd = cd;
@@ -36,9 +37,9 @@ public class CDPlayer implements MediaPlayer {
 		this.cd = cd;
 	}
 
-	@Inject // 大多数情况下Inject 与Autowired 等价的但是，它没有 require的属性
+/*	@Inject // 大多数情况下Inject 与Autowired 等价的但是，它没有 require的属性,注解Inject 与Autowried 修饰的方法最好有参数否则会出现警告
 	public void insertDisc() {
 		System.out.println("在检查到Autowired注解的时候调用此方法");
-	}
+	}*/
 
 }
