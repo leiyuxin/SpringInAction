@@ -14,9 +14,15 @@ public class CDPlayerConfigBaseOnExplicit {
 	/*@Bean void ss() {  Bean注解必须修饰有返回值的
 		System.out.println("无返回值的Bean修饰");
 	}*/
-	@Bean CDPlayer cdPlayer() {
+/*	@Bean CDPlayer cdPlayer() { //有依赖的装配 方式一,虽然每次都调用whiteAlum()这个方法但是它只返回一个是单例的,主要是被注解Bean修饰所有Spring会拦截
 		return new CDPlayer(whiteAlum());
-	}
+	}*/
+	@Bean CDPlayer cdPlayer(WhiteAlum w) { //有依赖的装配 方式二
+		return new CDPlayer(w);
+		}
+	@Bean CDPlayer cd1Player() { //有依赖的装配 方式二
+		return new CDPlayer(whiteAlum());
+		}
 	@Bean WhiteAlum whiteAlum() {
 		return new WhiteAlum();
 	}
